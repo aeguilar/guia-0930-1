@@ -1,0 +1,9 @@
+delimiter $$
+create procedure pa_seg_CargarMenuPerfil(idperfil int)
+begin
+ 
+	SELECT nivel, titulo  from menusistema as menu where menu.nivel >= (select nivel from menusistema as menu_sistema WHERE idMenuSistema=(SELECT idMenuSistema	 from  perfildetalle WHERE perfil_idperfil=idperfil) )
+     
+   end
+$$
+delimiter;

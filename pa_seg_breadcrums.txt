@@ -1,0 +1,7 @@
+delimiter $$
+create procedure pa_seg_breadcrums(id_menu int)
+begin
+      SELECT CONCAT('.',GROUP_CONCAT( nivel SEPARATOR '.' ) ) from menusistema as menu where menu.nivel < (select nivel from menusistema as menu_sistema WHERE idMenuSistema=5 )
+   end
+$$
+delimiter;

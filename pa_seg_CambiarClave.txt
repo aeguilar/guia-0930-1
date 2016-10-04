@@ -1,0 +1,18 @@
+delimiter $$
+create procedure pa_seg_CambiarClave(in contra varchar(1000), in id int,out valor int) 
+begin
+      
+if contra   REGEXP '([A-Z])([a-z])([0-9])'  AND CHAR_LENGTH(contra) >=8 then
+
+
+    update usuario set clave = contra where idusuario=id;
+  			set valor=1;
+  
+ELSE
+    set valor=0;
+		
+
+   END IF;
+end
+$$
+delimiter;

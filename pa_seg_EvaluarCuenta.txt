@@ -1,0 +1,8 @@
+delimiter $$
+create procedure pa_seg_EvaluarCuenta(Comprobar varchar(200))
+begin
+       SELECT COUNT(*) from Usuario where Correo = Comprobar; 
+
+   end
+$$
+delimiter;

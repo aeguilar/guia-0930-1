@@ -1,0 +1,8 @@
+delimiter $$
+create procedure pa_seg_VerificarClave(usuario varchar(200), Contraseña varchar(100))
+begin
+       SELECT COUNT(*) from Usuario where Correo = usuario and Clave = Contraseña; 
+     
+   end
+$$
+delimiter;

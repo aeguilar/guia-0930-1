@@ -1,0 +1,8 @@
+delimiter $$
+create procedure pa_seg_CargarPerfiles(id_usuario int)
+begin
+      select p.idPerfil , nombre from perfil p INNER join usuarioperfil as usu on usu.idUsuarioPerfil=p.idperfil WHERE usu.idUsuarioPerfil=id_usuario;
+     
+   end
+$$
+delimiter;
